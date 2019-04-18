@@ -105,27 +105,27 @@ public class member {
         String bookCount = "";
 
         boolean errlog = true;
+        
 
-        String sql = "select id, username, password, borrowedBookCount from member";
+        //String sql = "select id, username, password, borrowedBookCount from member";
+        String sql = "select id, username, borrowedBookCount from member where username='"+userName+"' and password='"+password+"'";
+        System.out.println(sql);
         try {
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
 
-            Check:
+            //Check:
             while (rs.next()) {
+                
                 id = rs.getString("id");
                 uname = rs.getString("userName");
-                pass = rs.getString("password");
                 bookCount = rs.getString("borrowedBookCount");
-
-                if (uname.equalsIgnoreCase(userName) && pass.equalsIgnoreCase(password)) {
-
+                
                     errlog = false;
                     data.loggedUserId = id;
                     data.loggedUserName = uname;
                     data.loggedUserBookCount = bookCount;
                     return "0";
-                }
 
             }
 

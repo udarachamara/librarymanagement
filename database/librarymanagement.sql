@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 18, 2019 at 05:34 AM
+-- Generation Time: Apr 18, 2019 at 06:49 AM
 -- Server version: 10.1.38-MariaDB
 -- PHP Version: 7.1.26
 
@@ -67,7 +67,7 @@ CREATE TABLE `librarian` (
   `id` int(10) NOT NULL,
   `name` varchar(30) NOT NULL,
   `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL
+  `password` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -75,8 +75,8 @@ CREATE TABLE `librarian` (
 --
 
 INSERT INTO `librarian` (`id`, `name`, `username`, `password`) VALUES
-(1, 'ravi', 'ravinda', 'ravi'),
-(2, 'ravinda', 'ravi', 'ravi');
+(1, 'ravi', 'ravinda', '63dd3e154ca6d948fc380fa576343ba6'),
+(2, 'ravinda', 'ravi', '63dd3e154ca6d948fc380fa576343ba6');
 
 -- --------------------------------------------------------
 
@@ -87,8 +87,8 @@ INSERT INTO `librarian` (`id`, `name`, `username`, `password`) VALUES
 CREATE TABLE `member` (
   `id` int(11) NOT NULL,
   `name` varchar(30) NOT NULL,
-  `username` varchar(20) NOT NULL,
-  `password` varchar(20) NOT NULL,
+  `username` varchar(45) NOT NULL,
+  `password` varchar(50) NOT NULL,
   `telephone` varchar(10) NOT NULL,
   `address` varchar(50) NOT NULL,
   `borrowedBookCount` int(11) NOT NULL
@@ -99,8 +99,8 @@ CREATE TABLE `member` (
 --
 
 INSERT INTO `member` (`id`, `name`, `username`, `password`, `telephone`, `address`, `borrowedBookCount`) VALUES
-(1, 'ravinda', 'ravi', 'ravi', '0713766081', '412/7/2,pahala imbulgoda', 0),
-(3, 'chuti', 'chuti', 'chuti', '1234567890', '555/A, colombo', 0);
+(1, 'ravinda', 'ravinda', '63dd3e154ca6d948fc380fa576343ba6', '0713766081', '412/7/2,pahala imbulgoda', 0),
+(3, 'chuti', 'chuti', '217f0d66074b6c7dfbf53fee59ff2553', '1234567890', '555/A, colombo', 0);
 
 --
 -- Indexes for dumped tables
