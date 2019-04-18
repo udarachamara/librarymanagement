@@ -86,6 +86,8 @@ public class book {
 
     }
     
+
+    
     public boolean addBook(){
         try{
             String q = "Insert into book (isbn, name, author, bookCount) values('" + getISBN()+ "', '" + getBookName() + "', '" + getAuthor()+ "','" + getBookCount()+ "')";
@@ -100,6 +102,7 @@ public class book {
     }
     
     public boolean updateBook(String id){
+        
         try {
             String q = "Update book set isbn = '" + ISBN + "', name = '" + bookName + "', author = '" + author + "', bookCount = '" + bookCount + "' where id = '" + id + "'";
             pst = conn.prepareStatement(q);
@@ -122,7 +125,19 @@ public class book {
             return false;
         }
     }
-    
+    public ResultSet searchMember(int id){
+        
+        String sql = "Select * From member where id = '"+id+"'";
+
+        try {
+            pst = conn.prepareStatement(sql);
+            rs = pst.executeQuery();
+            return rs;
+        } catch (SQLException e) {
+            return null;
+        }
+
+    } 
     
     public int issueBook(String memberId){
         

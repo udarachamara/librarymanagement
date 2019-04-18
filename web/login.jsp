@@ -36,7 +36,7 @@ and open the template in the editor.
             z-index: -2;
         }
     </style>
-    <body>
+    <body background="Images/light.jpg">
 
 
 
@@ -46,7 +46,7 @@ and open the template in the editor.
                 <i class="fa fa-remove"></i>
             </a>
             <h4 class="w3-bar-item"><b></b></h4>
-            <p class=" w3-center"><img src="logo.png" alt="cat dog" height="195" width="198"></p>
+             <p class=" w3-center"><img src="Images/logo.png" alt="logo" height="100" width="200"></p>
             <h1 style="font-family: cursive">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;ARD</h1>
             <%if (data.getLoggedUserId() == null) {%>
             
@@ -118,10 +118,10 @@ and open the template in the editor.
 
                 </div>
 
-                <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
+                 <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
 
-                    <p class=" w3-center"><img src="petadoption.jpg" alt="cat dog" height="170" width="285"></p>
-                    <p class=" w3-center w3-padding-64"><img src="NJSPCA_ADOPT-A-PET.png" alt="cat dog" height="170" width="285"></p>
+                    <p class=" w3-center"><img src="Images/back.jpg" alt="a" height="170" width="285"></p>
+                    <p class=" w3-center w3-padding-64"><img src="Images/women.jpg" alt="d" height="170" width="285"></p>
 
                 </div>
             </div>

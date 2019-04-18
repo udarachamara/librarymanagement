@@ -32,7 +32,7 @@
             z-index: -2;
         }
     </style>
-    <body>
+    <body background="Images/light.jpg">
 
 
 
@@ -42,19 +42,22 @@
                 <i class="fa fa-remove"></i>
             </a>
             <h4 class="w3-bar-item"><b></b></h4>
-            <p class=" w3-center"><img src="logo.png" alt="cat dog" height="195" width="198"></p>
+            <p class=" w3-center"><img src="Images/logo.png" alt="logo" height="100" width="200"></p>
             <h1 style="font-family: cursive">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;ARD</h1>
             
-            <%if (data.getLoggedUserId() == null) {%>
+            <%if ((data.getLoggedAdminId() == null)&&(data.getLoggedUserId() == null)) {%>
             
             <form method="post" action="login.jsp" class="w3-center" style="align-items: center">
                 <p ><button class="w3-button  w3-gray w3-center " style="width: 200px " style="align-items: center" type="submit">LOGIN</button></p>
             </form>
             <form method="post" action="addUser.jsp" class="w3-center" style="align-items: center">
-                <p ><button class="w3-button  w3-gray w3-center " style="width: 200px" type="submit">SIGN IN</button></p>
+                <p ><button class="w3-button  w3-gray w3-center " style="width: 200px" type="submit">SIGN UP</button></p>
+            </form>
+            <form method="post" action="adminLogin.jsp" class="w3-center" style="align-items: center">
+                <p ><button class="w3-button  w3-gray w3-center " style="width: 200px" type="submit">ADMINISTRATOR</button></p>
             </form>
             
-            <%} else {%>
+            <%} else if ((data.getLoggedAdminId() != null)||(data.getLoggedUserId() != null)){%>
             
             <p style="text-align: center"style="text-align: center">Logged in as</p>
             <p style="text-align: center"><%=data.getLoggedUserName()%></p>
@@ -124,10 +127,10 @@
 
                 </div>
 
-                <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
+               <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
 
-                    <p class=" w3-center"><img src="petadoption.jpg" alt="cat dog" height="170" width="285"></p>
-                    <p class=" w3-center w3-padding-64"><img src="NJSPCA_ADOPT-A-PET.png" alt="cat dog" height="170" width="285"></p>
+                    <p class=" w3-center"><img src="Images/back.jpg" alt="a" height="170" width="285"></p>
+                    <p class=" w3-center w3-padding-64"><img src="Images/women.jpg" alt="d" height="170" width="285"></p>
 
                 </div>
             </div>

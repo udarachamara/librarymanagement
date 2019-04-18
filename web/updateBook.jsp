@@ -1,4 +1,6 @@
 
+<%@page import="package1.book"%>
+<%@page import="java.sql.ResultSet"%>
 <%@page import="package1.data"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -32,17 +34,17 @@
             z-index: -2;
         }
     </style>
-    <body>
+    <body background="Images/light.jpg">
 
 
 
-        <!-- Sidebar -->
+       <!-- Sidebar -->
         <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left"  id="mySidebar" >
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
                 <i class="fa fa-remove"></i>
             </a>
             <h4 class="w3-bar-item"><b></b></h4>
-            <p class=" w3-center"><img src="logo.png" alt="cat dog" height="195" width="198"></p>
+            <p class=" w3-center"><img src="Images/logo.png" alt="logo" height="100" width="200"></p>
             <h1 style="font-family: cursive">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;ARD</h1>
             
             <%if ((data.getLoggedAdminId() == null)&&(data.getLoggedUserId() == null)) {%>
@@ -70,7 +72,6 @@
             <%}%>
 
         </nav>
-
         <!-- Navbar -->
         <div style="z-index: 5"class="w3-top">
             <div style="z-index: 1" class="w3-bar w3-theme w3-top w3-left-align  " >
@@ -104,20 +105,27 @@
                     <h1>Update Book Details<br/><br/></h1>
 
                     <form method="POST" action="manageBook" onsubmit="return confirm('Are you sure to Update Book details?')">
+                          
+                       
+
+                       <%String id = request.getParameter("id").toString();%>  
+                       <%String isbn = request.getParameter("isbn").toString();%> 
+                       <%String name = request.getParameter("name").toString();%> 
+                       <%String author = request.getParameter("author").toString();%>
+                       <%int count = Integer.parseInt(request.getParameter("bookCount").toString());%> 
 
                         <p><label><i class="fa fa-circle"></i> ISBN</label></p>
-                        <input class="w3-input w3-border" type="text" name="isbn" required>     
+                        <input class="w3-input w3-border" type="text" name="isbn" required value="<%= isbn%>">     
 
                         <p><label><i class="fa fa-circle"></i> Book Name </label></p>
-                        <input class="w3-input w3-border" type="test" name="name" required>
+                        <input class="w3-input w3-border" type="test" name="name" required value="<%= name%>">
 
                         <p><label><i class="fa fa-circle"></i> Author</label></p>
-                        <input class="w3-input w3-border" type="text" name="author" required>     
+                        <input class="w3-input w3-border" type="text" name="author" required value="<%= author%>">     
 
                         <p><label><i class="fa fa-circle"></i> Book Count</label></p>
-                        <input class="w3-input w3-border" type="number" name="count" required>   
+                        <input class="w3-input w3-border" type="number" name="count" required value="<%= count %>" >   
                         
-                        <% String id = request.getParameter("id").toString();%>
                         
                         
                         <input type="hidden" name="id" value="<%=id%>">
@@ -135,10 +143,10 @@
 
                 </div>
 
-                <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
+              <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
 
-                    <p class=" w3-center"><img src="petadoption.jpg" alt="cat dog" height="170" width="285"></p>
-                    <p class=" w3-center w3-padding-64"><img src="NJSPCA_ADOPT-A-PET.png" alt="cat dog" height="170" width="285"></p>
+                    <p class=" w3-center"><img src="Images/back.jpg" alt="a" height="170" width="285"></p>
+                    <p class=" w3-center w3-padding-64"><img src="Images/women.jpg" alt="d" height="170" width="285"></p>
 
                 </div>
             </div>

@@ -32,17 +32,16 @@
             z-index: -2;
         }
     </style>
-    <body>
+    <body background="Images/light.jpg">
 
 
-
-        <!-- Sidebar -->
+<!-- Sidebar -->
         <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left"  id="mySidebar" >
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
                 <i class="fa fa-remove"></i>
             </a>
             <h4 class="w3-bar-item"><b></b></h4>
-            <p class=" w3-center"><img src="logo.png" alt="cat dog" height="195" width="198"></p>
+            <p class=" w3-center"><img src="Images/logo.png" alt="logo" height="100" width="200"></p>
             <h1 style="font-family: cursive">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;ARD</h1>
             
             <%if ((data.getLoggedAdminId() == null)&&(data.getLoggedUserId() == null)) {%>
@@ -77,14 +76,15 @@
                 <a class="w3-bar-item w3-button w3-right w3-hide-large w3-hover-white w3-large w3-theme-l1" href="javascript:void(0)" onclick="w3_open()"><i class="fa fa-bars"></i></a>
                 <a href="index.jsp" class="w3-bar-item w3-button w3-theme-l1"><h6>HOME</h6></a>
                 <%if ((data.getLoggedUserId() == null)&&(data.getLoggedAdminId() == null)) {%>
-                <%} else if((data.getLoggedAdminId() == null)&&(data.getLoggedUserId() != null)) { %>
+                <%} else if(data.getLoggedUserId() != null) { %>
                 <a href="member.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>MEMBER</h6></a>
-                <%} else if((data.getLoggedUserId() == null)&&(data.getLoggedAdminId() != null)){%>
+                <a href="viewBook.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>BOOKS</h6></a>
+                <%} else if(data.getLoggedAdminId() != null){%>
                 <a href="addBook.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>ADD BOOK</h6></a>
-                <a href="updateBook.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>UPDATE BOOK</h6></a>
+                <a href="manageBook.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>UPDATE BOOK</h6></a>
                 <a href="issueBook.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>ISSUE BOOK</h6></a>
                 <%}%>
-                <a href="viewBook.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>BOOKS</h6></a>
+                
                 <a href="about.jsp" class="w3-bar-item w3-button w3-hide-small w3-hover-white"><h6>ABOUT</h6></a>
 
             </div>
@@ -125,10 +125,10 @@
 
                 </div>
 
-                <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
+               <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
 
-                    <p class=" w3-center"><img src="petadoption.jpg" alt="cat dog" height="170" width="285"></p>
-                    <p class=" w3-center w3-padding-64"><img src="NJSPCA_ADOPT-A-PET.png" alt="cat dog" height="170" width="285"></p>
+                    <p class=" w3-center"><img src="Images/back.jpg" alt="a" height="170" width="285"></p>
+                    <p class=" w3-center w3-padding-64"><img src="Images/women.jpg" alt="d" height="170" width="285"></p>
 
                 </div>
             </div>

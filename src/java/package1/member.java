@@ -92,7 +92,7 @@ public class member {
             pst.execute();
             return true;
         }
-        catch(Exception e){
+        catch(SQLException e){
             return false;
         }
     }

@@ -35,27 +35,33 @@
             z-index: -2;
         }
     </style>
-    <body>
+    <body background="Images/light.jpg">
 
 
 
-        <!-- Sidebar -->
+       <!-- Sidebar -->
         <nav class="w3-sidebar w3-bar-block w3-collapse w3-large w3-theme-l5 w3-animate-left"  id="mySidebar" >
             <a href="javascript:void(0)" onclick="w3_close()" class="w3-right w3-xlarge w3-padding-large w3-hover-black w3-hide-large" title="Close Menu">
                 <i class="fa fa-remove"></i>
             </a>
             <h4 class="w3-bar-item"><b></b></h4>
-            <p class=" w3-center"><img src="logo.png" alt="cat dog" height="195" width="198"></p>
+            <p class=" w3-center"><img src="Images/logo.png" alt="logo" height="100" width="200"></p>
             <h1 style="font-family: cursive">&emsp;&nbsp;&nbsp;&nbsp;&nbsp;ARD</h1>
-            <%if (data.getLoggedUserId() == null) {%>
+            
+            <%if ((data.getLoggedAdminId() == null)&&(data.getLoggedUserId() == null)) {%>
             
             <form method="post" action="login.jsp" class="w3-center" style="align-items: center">
                 <p ><button class="w3-button  w3-gray w3-center " style="width: 200px " style="align-items: center" type="submit">LOGIN</button></p>
             </form>
             <form method="post" action="addUser.jsp" class="w3-center" style="align-items: center">
-                <p ><button class="w3-button  w3-gray w3-center " style="width: 200px" type="submit">SIGN IN</button></p>
+                <p ><button class="w3-button  w3-gray w3-center " style="width: 200px" type="submit">SIGN UP</button></p>
             </form>
-            <%} else {%>
+            <form method="post" action="adminLogin.jsp" class="w3-center" style="align-items: center">
+                <p ><button class="w3-button  w3-gray w3-center " style="width: 200px" type="submit">ADMINISTRATOR</button></p>
+            </form>
+            
+            <%} else if ((data.getLoggedAdminId() != null)||(data.getLoggedUserId() != null)){%>
+            
             <p style="text-align: center"style="text-align: center">Logged in as</p>
             <p style="text-align: center"><%=data.getLoggedUserName()%></p>
             <br/>
@@ -97,7 +103,7 @@
             <div class="w3-row w3-padding-64 w3-padding-small">
                 <div class="w3-twothird w3-container w3-padding-large">
                     <br/>
-                    <h1>Pets<br/></h1>
+                    <h1>BOOKS<br/></h1>
                     <br/>
 
                     <%book p = new book();%>
@@ -132,8 +138,8 @@
 
                 <div style="list-style-type: circle" class="w3-third w3-container w3-padding-64">
 
-                    <p class=" w3-center"><img src="petadoption.jpg" alt="cat dog" height="170" width="285"></p>
-                    <p class=" w3-center w3-padding-64"><img src="NJSPCA_ADOPT-A-PET.png" alt="cat dog" height="170" width="285"></p>
+                    <p class=" w3-center"><img src="Images/back.jpg" alt="a" height="170" width="285"></p>
+                    <p class=" w3-center w3-padding-64"><img src="Images/women.jpg" alt="d" height="170" width="285"></p>
 
                 </div>
             </div>
